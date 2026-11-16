@@ -1,398 +1,417 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-    content="Arianna Ramotar's portfolio featuring leadership, marketing, motorsports, and creative projects.">
-
-  <title>Arianna Ramotar | Portfolio</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Arianna Ramotar — portfolio of business analysis, marketing, leadership and independent projects.">
+  <title>Arianna Ramotar — Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAVIGATION -->
   <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="logo" href="#home">Arianna Ramotar<span>.</span></a>
-
-      <div class="nav-links">
-        <a href="#work">Work</a>
+    <nav class="shell nav" aria-label="Main navigation">
+      <a class="wordmark" href="index.html">arianna<span>r.</span></a>
+      <button class="menu-toggle" type="button"
+        aria-expanded="false" aria-controls="nav-links">
+        Menu <span aria-hidden="true">+</span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#work">Selected work</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Personal projects</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-contact" href="#contact">Let's connect ↗</a>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- HERO -->
-    <section class="hero container" id="home">
-
-      <div class="hero-text">
-        <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
-
-        <h1>Hi, I'm Arianna<span class="accent">.</span></h1>
-
-        <p class="intro">
-          I'm a Commerce student at McMaster University
-          specializing in Strategic Management and Data
-          Analytics, with a minor in Innovation.
-        </p>
-
-        <p class="hero-description">
-          My experiences span motorsports, marketing,
-          leadership, and creative projects. I'm interested
-          in how people, processes, and ideas connect,
-          and how those connections turn into meaningful work.
-        </p>
-
-        <a class="button" href="#work">
-          Explore My Work <span aria-hidden="true">↗</span>
-        </a>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-topline">
+        <span>PORTFOLIO / 2026</span>
+        <span>BUSINESS · CREATIVITY · PEOPLE</span>
       </div>
 
-      <div class="hero-image">
-        <div class="photo-placeholder">
-          <span>Your photo coming soon</span>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">
+            <span class="kicker-dot"></span>
+            A LITTLE BIT OF EVERYTHING
+          </p>
+
+          <h1 id="hero-title">
+            Hi, I'm<br>
+            <em>Arianna<span class="period">.</span></em>
+          </h1>
+
+          <p class="hero-lead">
+            I work at the intersection of
+            <strong>business, ideas and people.</strong>
+          </p>
+
+          <p class="hero-description">
+            I'm a McMaster Commerce student specializing in
+            Strategic Management and Data Analytics, with a
+            minor in Innovation. My experiences span business
+            analysis, marketing, motorsports and creative
+            projects—and I enjoy finding the connections
+            between them.
+          </p>
+
+          <a class="arrow-link" href="#work">
+            Explore what I've worked on
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-visual">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <span>YOUR PHOTO<br>GOES HERE</span>
+              <small>Replace with a photo from your WIM event</small>
+            </div>
+          </div>
+          <span class="hero-sticker" aria-hidden="true">
+            always<br>curious ✳
+          </span>
+          <div class="hero-caption">
+            01 / THE PERSON BEHIND THE PROJECTS
+          </div>
         </div>
       </div>
 
+      <div class="hero-bottom">
+        <span>SCROLL TO EXPLORE</span>
+        <span aria-hidden="true">↓</span>
+      </div>
     </section>
 
-
-    <!-- FEATURED WORK / MACFE -->
-    <section class="section section-tinted" id="work">
-      <div class="container">
-
+    <!-- FEATURED MACFE WORK -->
+    <section class="work-section" id="work">
+      <div class="shell">
         <div class="section-heading">
-          <p class="eyebrow">01 / FEATURED EXPERIENCE</p>
-          <h2>Mac Formula Electric<span class="accent">.</span></h2>
-          <p class="section-description">
-            From business development to leading a
-            multidisciplinary Formula SAE Electric team,
-            MACFE has been one of the most defining parts
-            of my undergraduate experience.
+          <p class="section-index">01 / FEATURED WORK</p>
+          <h2>Work that<br><em>means something.</em></h2>
+          <p>
+            Not just roles and responsibilities—the projects,
+            people and outcomes behind them.
           </p>
         </div>
 
-        <div class="featured-project">
-
-          <div class="featured-image">
-            <div class="image-placeholder">
-              MACFE Team / Vehicle Photo
+        <a class="feature-card" href="macfe.html">
+          <div class="feature-media">
+            <div class="media-placeholder media-dark">
+              <span class="media-top">FEATURED / 01</span>
+              <strong>
+                MAC<br>FORMULA<br>
+                ELECTRIC<span class="red-dot">.</span>
+              </strong>
+              <span class="media-bottom">
+                IMAGE SPACE — ADD TEAM / CAR PHOTO
+              </span>
             </div>
           </div>
 
-          <div class="featured-content">
-            <p class="eyebrow">2023 – PRESENT</p>
+          <div class="feature-details">
+            <div class="feature-meta">
+              <span>LEADERSHIP / STRATEGY / MOTORSPORTS</span>
+              <span>2022 — PRESENT</span>
+            </div>
 
-            <h3>Leadership, Strategy & Motorsports</h3>
+            <h3>Building more<br>than a race car.</h3>
 
             <p>
-              My work with the team has included organizational
-              leadership, sponsorship development, operations,
-              event planning, and collaboration across business
-              and engineering disciplines.
+              From business team member to Team Principal,
+              I helped lead a multidisciplinary student
+              organization through three competition seasons,
+              supporting operations, sponsor relationships
+              and major team initiatives.
             </p>
 
-            <p>
-              Explore the different competition seasons to see
-              the projects and initiatives I contributed to.
-            </p>
-
-            <a class="text-link" href="macfe.html">
-              Explore My MACFE Journey ↗
-            </a>
-          </div>
-        </div>
-
-        <!-- INTERACTIVE SEASON SELECTOR -->
-        <div class="season-explorer">
-          <div class="season-explorer-heading">
-            <div>
-              <p class="eyebrow">EXPLORE BY SEASON</p>
-              <h3>Four seasons. Different challenges.</h3>
-            </div>
-          </div>
-
-          <div class="season-tabs" role="group"
-               aria-label="Choose a MACFE competition season">
-            <button class="season-tab" type="button"
-                    data-season="ev5" aria-pressed="false">
-              <strong>EV5</strong>
-              <span>2023–2024</span>
-            </button>
-
-            <button class="season-tab" type="button"
-                    data-season="ev6" aria-pressed="false">
-              <strong>EV6</strong>
-              <span>2024–2025</span>
-            </button>
-
-            <button class="season-tab active" type="button"
-                    data-season="ev7" aria-pressed="true">
-              <strong>EV7</strong>
-              <span>2025–2026</span>
-            </button>
-
-            <button class="season-tab" type="button"
-                    data-season="ev8" aria-pressed="false">
-              <strong>EV8</strong>
-              <span>2026–2027</span>
-            </button>
-          </div>
-
-          <article class="season-panel" aria-live="polite">
-            <p class="eyebrow" id="season-year">
-              2025–2026 SEASON
-            </p>
-
-            <h3 id="season-title">EV7 — A Year of Milestones</h3>
-
-            <p id="season-description">
-              The EV7 season included the vehicle reveal,
-              Formula SAE Michigan competition, team growth,
-              and leadership transition.
-            </p>
-
-            <div class="season-highlights" id="season-highlights">
-              <span>EV7 Reveal Event</span>
-              <span>Formula SAE Michigan</span>
-              <span>Team Operations</span>
+            <div class="impact-row">
+              <div>
+                <strong>181</strong>
+                <span>team members<br>in 2026</span>
+              </div>
+              <div>
+                <strong>55</strong>
+                <span>sponsors<br>in 2026</span>
+              </div>
+              <div>
+                <strong>3</strong>
+                <span>seasons as<br>Team Principal</span>
+              </div>
             </div>
 
-            <a class="text-link" href="macfe.html">
-              View the full MACFE story ↗
-            </a>
-          </article>
-        </div>
+            <span class="feature-cta">
+              Explore the seasons ↗
+            </span>
+          </div>
+        </a>
 
+        <!-- INTERACTIVE SEASON EXPLORER -->
+        <div class="season-strip">
+          <div class="season-strip-title">
+            <span class="section-index">A CLOSER LOOK</span>
+            <h3>Season by season<span class="period">.</span></h3>
+          </div>
+
+          <div class="season-controls" role="group"
+            aria-label="Choose a MACFE season">
+            <button type="button" class="season-button"
+              data-season="ev5" aria-pressed="false">
+              EV5 <small>23 / 24</small>
+            </button>
+            <button type="button" class="season-button"
+              data-season="ev6" aria-pressed="false">
+              EV6 <small>24 / 25</small>
+            </button>
+            <button type="button" class="season-button active"
+              data-season="ev7" aria-pressed="true">
+              EV7 <small>25 / 26</small>
+            </button>
+            <button type="button" class="season-button"
+              data-season="ev8" aria-pressed="false">
+              EV8 <small>26 / 27</small>
+            </button>
+          </div>
+
+          <div class="season-summary" aria-live="polite">
+            <span id="season-eyebrow">2025–2026 / EV7</span>
+            <h4 id="season-heading">A year of milestones</h4>
+            <p id="season-copy">
+              Vehicle reveal, Formula SAE Michigan,
+              team growth and leadership transition.
+            </p>
+            <div class="chip-row" id="season-chips">
+              <span>EV7 Reveal</span>
+              <span>Competition</span>
+              <span>Leadership</span>
+            </div>
+            <a href="macfe.html">View MACFE projects ↗</a>
+          </div>
+        </div>
       </div>
     </section>
 
-
     <!-- PROFESSIONAL EXPERIENCE -->
-    <section class="section container" id="experience">
-
-      <div class="section-heading">
-        <p class="eyebrow">02 / MY EXPERIENCE</p>
-        <h2>Professional Experience<span class="accent">.</span></h2>
-        <p class="section-description">
-          Opportunities that have helped me develop
-          my skills in marketing, communication,
-          collaboration, and mentorship.
+    <section class="experience-section shell" id="experience">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="section-index">02 / EXPERIENCE</p>
+          <h2>Where I've<br><em>put ideas to work.</em></h2>
+        </div>
+        <p>
+          Professional experience in business analysis,
+          technology marketing and education.
         </p>
       </div>
 
       <div class="experience-list">
-
-        <article class="experience-item">
-          <p class="experience-date">2024 – 2025</p>
+        <article class="experience-row">
+          <div class="experience-date">
+            2026 <span>May — Sep</span>
+          </div>
           <div>
+            <p class="role-type">INTERNSHIP / BUSINESS & MARKETING</p>
+            <h3>Business Analyst &<br>Marketing Intern</h3>
+            <p class="company">CATTLEytics</p>
+            <p>
+              Worked in a role spanning business analysis
+              and marketing. Specific projects and outcomes
+              will be added as case studies.
+            </p>
+          </div>
+          <span class="experience-number">01</span>
+        </article>
+
+        <article class="experience-row">
+          <div class="experience-date">
+            2024–25 <span>May — Aug</span>
+          </div>
+          <div>
+            <p class="role-type">INTERNSHIP / TECHNOLOGY</p>
             <h3>Marketing Coordinator</h3>
-            <p class="organization">SOTI Inc.</p>
+            <p class="company">SOTI Inc.</p>
             <p>
               Contributed to marketing and communications
-              initiatives within a global technology company,
-              gaining experience working across teams
-              and supporting business objectives.
+              initiatives in a global technology business,
+              collaborating across teams.
             </p>
           </div>
+          <span class="experience-number">02</span>
         </article>
 
-        <article class="experience-item">
-          <p class="experience-date">2024 & 2026</p>
+        <article class="experience-row">
+          <div class="experience-date">
+            2024 & 2026 <span>Jan — May</span>
+          </div>
           <div>
+            <p class="role-type">EDUCATION / MENTORSHIP</p>
             <h3>Teaching Assistant</h3>
-            <p class="organization">McMaster University</p>
+            <p class="company">
+              McMaster University · Faculty of Engineering
+            </p>
             <p>
               Supported engineering and management students
-              through assessment, constructive feedback,
-              and academic guidance.
+              through grading, feedback, guidance and
+              coordination with course instructors.
             </p>
           </div>
+          <span class="experience-number">03</span>
         </article>
-
       </div>
+
+      <p class="experience-note">
+        Additional experience includes VP Events / VP Marketing
+        with McMaster Culture Connect and earlier customer-facing
+        retail roles.
+        <a href="#contact">Ask me for my full resume ↗</a>
+      </p>
     </section>
 
-
     <!-- PERSONAL PROJECTS -->
-    <section class="section section-tinted" id="projects">
-      <div class="container">
-
+    <section class="projects-section" id="projects">
+      <div class="shell">
         <div class="section-heading">
-          <p class="eyebrow">03 / BEYOND THE CLASSROOM</p>
-          <h2>Personal Projects<span class="accent">.</span></h2>
-          <p class="section-description">
-            Independent projects that let me experiment,
-            learn new skills, and explore ideas outside
-            my academic and professional work.
+          <p class="section-index">03 / THE SIDE QUESTS</p>
+          <h2>Made out of<br><em>curiosity.</em></h2>
+          <p>
+            Independent projects are where I get to learn by
+            doing, experiment with new ideas and build
+            something from scratch.
           </p>
         </div>
 
         <div class="project-grid">
-
-          <article class="project-card">
-            <div class="project-image">
-              <div class="image-placeholder">
-                Creative Publishing Photo
+          <article class="project-card project-publishing">
+            <div class="project-art art-publishing">
+              <span class="art-label">PERSONAL PROJECT / 01</span>
+              <div class="book-stack">
+                <div class="book book-back"></div>
+                <div class="book book-front">
+                  <span>ARIA<br>VELLUNE</span>
+                  <small>creative publishing</small>
+                </div>
               </div>
             </div>
-
-            <div class="project-content">
-              <p class="project-category">
-                DESIGN / ENTREPRENEURSHIP
-              </p>
-
+            <div class="project-text">
+              <p>DESIGN / ENTREPRENEURSHIP</p>
               <h3>Creative Publishing</h3>
-
-              <p>
-                Developing original colouring books,
-                journals, and creative products under
-                Aria Vellune, from initial concepts
-                to finished publications.
-              </p>
-
-              <span class="project-status">Ongoing</span>
+              <span>
+                Developing original colouring books, journals
+                and other creative products under the pen name
+                Aria Vellune.
+              </span>
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-image">
-              <div class="image-placeholder">
-                Website Development Photo
+          <article class="project-card project-web">
+            <div class="project-art art-web">
+              <span class="art-label">PERSONAL PROJECT / 02</span>
+              <div class="browser-mock">
+                <div class="browser-bar">
+                  <i></i><i></i><i></i>
+                </div>
+                <strong>hi, i'm<br><em>arianna.</em></strong>
+                <small>DESIGNED & BUILT BY ME</small>
               </div>
             </div>
-
-            <div class="project-content">
-              <p class="project-category">
-                WEB DEVELOPMENT / LEARNING
-              </p>
-
-              <h3>Portfolio Development</h3>
-
-              <p>
-                Building this website using HTML,
-                CSS, and JavaScript while learning
-                how to create responsive layouts
-                and interactive web experiences.
-              </p>
-
-              <span class="project-status">In Progress</span>
+            <div class="project-text">
+              <p>HTML / CSS / JAVASCRIPT</p>
+              <h3>This Very Website</h3>
+              <span>
+                Teaching myself front-end development while
+                building a space to share my work, ideas
+                and projects.
+              </span>
             </div>
           </article>
-
         </div>
       </div>
     </section>
-
 
     <!-- ABOUT -->
-    <section class="section container" id="about">
-
-      <div class="section-heading">
-        <p class="eyebrow">04 / A LITTLE ABOUT ME</p>
-        <h2>Curious by Nature<span class="accent">.</span></h2>
+    <section class="about-section shell" id="about">
+      <div class="about-label">
+        <p class="section-index">04 / THE PERSON</p>
+        <span class="asterisk" aria-hidden="true">✳</span>
       </div>
 
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            Throughout my undergraduate journey,
-            I've found myself involved in a variety
-            of experiences, many of which have
-            grown into genuine passions.
-          </p>
+      <div class="about-main">
+        <h2>A little about<br><em>the way I think.</em></h2>
 
-          <p>
-            From motorsports and marketing to creative
-            projects and community initiatives, these
-            opportunities have challenged me to think
-            beyond individual disciplines and approach
-            problems from different perspectives.
-          </p>
+        <div class="about-columns">
+          <div>
+            <p>
+              Throughout university, I've found myself drawn
+              to opportunities that don't always fit neatly
+              into one category. From leading a Formula SAE
+              team to working in marketing, organizing events
+              and developing creative projects, each
+              experience has shaped the way I approach
+              new challenges.
+            </p>
+            <p>
+              I'm interested in how people, processes and
+              ideas connect—and in finding thoughtful ways
+              to turn those connections into meaningful
+              outcomes.
+            </p>
+          </div>
 
-          <p>
-            I'm particularly interested in understanding
-            how people, processes, and ideas connect
-            to form larger systems, and how that
-            understanding can lead to meaningful outcomes.
-          </p>
+          <aside class="education-box">
+            <span>EDUCATION / 2027</span>
+            <h3>McMaster<br>University</h3>
+            <p>
+              Honours Bachelor of Commerce with Internship
+            </p>
+            <p>
+              Strategic Management & Data Analytics ·
+              Minor in Innovation
+            </p>
+          </aside>
         </div>
-
-        <aside class="education-card">
-          <p class="eyebrow">EDUCATION</p>
-          <h3>McMaster University</h3>
-
-          <p class="organization">
-            DeGroote School of Business
-          </p>
-
-          <p>
-            Honours Bachelor of Commerce
-            with Internship
-          </p>
-
-          <p>
-            Strategic Management & Data Analytics
-          </p>
-
-          <p>Minor in Innovation</p>
-
-          <p class="education-year">
-            Expected Graduation: 2027
-          </p>
-        </aside>
       </div>
     </section>
 
-
     <!-- CONTACT -->
-    <section class="section contact-section" id="contact">
-      <div class="container">
-
-        <p class="eyebrow">05 / LET'S CONNECT</p>
-        <h2>Get in Touch<span class="accent">.</span></h2>
-
+    <section class="contact-section" id="contact">
+      <div class="shell contact-inner">
+        <p class="section-index">05 / SAY HELLO</p>
+        <h2>Let's make<br><em>something happen.</em></h2>
         <p>
-          I'm always happy to connect, exchange ideas,
-          and learn about new opportunities.
+          I'm always interested in meaningful conversations,
+          new ideas and opportunities to collaborate.
         </p>
 
-        <div class="contact-links">
-          
-          <a href="mailto:ramotaa@mcmaster.ca@example.com">
-            Email Me ↗
+        <div class="contact-actions">
+          <a href="mailto:ramotaa@mcmaster.ca">
+            Email me <span aria-hidden="true">↗</span>
           </a>
-
           <a href="https://www.linkedin.com/in/ariannaramotar/"
-             target="_blank"
-             rel="noopener noreferrer">
-            LinkedIn ↗
+            target="_blank" rel="noopener noreferrer">
+            LinkedIn <span aria-hidden="true">↗</span>
           </a>
         </div>
 
+      
+        </small>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© 2026 Arianna Ramotar</p>
-      <p>Designed & developed by Arianna.</p>
-    </div>
+  <footer class="footer shell">
+    <span>© <span id="year">2026</span> ARIANNA RAMOTAR</span>
+    <span>BUILT WITH CURIOSITY & A LITTLE JAVASCRIPT</span>
+    <a href="#main">BACK TO TOP ↑</a>
   </footer>
-
 </body>
 </html>
