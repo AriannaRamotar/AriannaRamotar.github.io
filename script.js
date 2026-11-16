@@ -1,127 +1,185 @@
 
-/*
-  MACFE INTERACTIVE SEASON EXPLORER
+/* ==================================
+   MACFE SEASON DATA
+================================== */
 
-  Each season has:
-  - a year
-  - a title
-  - a description
-  - a list of project highlights
-
-  We'll expand this as we build the MACFE page.
-*/
-
-const seasons = {
+const seasonData = {
   ev5: {
-    year: "2023–2024",
-    title: "EV5 — Building Foundations",
-    description:
-      "The EV5 season marked an important stage in my " +
-      "leadership journey, with a focus on business " +
-      "development, team operations, and organizational " +
-      "initiatives.",
-    highlights: [
-      "Business Development",
-      "Team Leadership",
-      "EV5 Season"
+    year: "2023–2024 / EV5",
+    title: "Building the foundations",
+    copy:
+      "Business development, team leadership and " +
+      "organizational operations during the EV5 season.",
+    chips: [
+      "Business development",
+      "EV5 season",
+      "Leadership"
     ]
   },
 
   ev6: {
-    year: "2024–2025",
-    title: "EV6 — Growing the Team",
-    description:
-      "During the EV6 season, my work included team " +
-      "development, sponsorship relationships, " +
-      "organizational growth, and supporting " +
-      "the team's ongoing operations.",
-    highlights: [
-      "Sponsorship Development",
-      "Team Operations",
-      "EV6 Season"
+    year: "2024–2025 / EV6",
+    title: "Growing together",
+    copy:
+      "Team operations, sponsor relationships and " +
+      "organizational development during the EV6 season.",
+    chips: [
+      "Sponsorship",
+      "Team development",
+      "EV6 season"
     ]
   },
 
   ev7: {
-    year: "2025–2026",
-    title: "EV7 — A Year of Milestones",
-    description:
-      "The EV7 season included the vehicle reveal, " +
-      "Formula SAE Michigan competition, team growth, " +
-      "and leadership transition.",
-    highlights: [
-      "EV7 Reveal Event",
-      "Formula SAE Michigan",
-      "Team Operations"
+    year: "2025–2026 / EV7",
+    title: "A year of milestones",
+    copy:
+      "Vehicle reveal, Formula SAE Michigan, " +
+      "team growth and leadership transition.",
+    chips: [
+      "EV7 Reveal",
+      "Competition",
+      "Leadership"
     ]
   },
 
   ev8: {
-    year: "2026–2027",
-    title: "EV8 — Continuing the Journey",
-    description:
-      "Following my transition from Team Principal, " +
-      "I continued contributing to the team through " +
-      "outreach initiatives, including organizing " +
-      "Women in Motorsports Night.",
-    highlights: [
+    year: "2026–2027 / EV8",
+    title: "A new chapter",
+    copy:
+      "Continued involvement following my Team " +
+      "Principal tenure, including Women in " +
+      "Motorsports Night and industry outreach.",
+    chips: [
       "Women in Motorsports",
-      "Industry Outreach",
-      "Event Planning"
+      "Outreach",
+      "Events"
     ]
   }
 };
 
 
-// Find the HTML elements we'll update
+/* ==================================
+   INTERACTIVE SEASON SELECTOR
+================================== */
 
-const seasonButtons = document.querySelectorAll(".season-tab");
+const seasonButtons =
+  document.querySelectorAll("[data-season]");
 
-const yearElement = document.getElementById("season-year");
-const titleElement = document.getElementById("season-title");
-const descriptionElement =
-  document.getElementById("season-description");
-const highlightsElement =
-  document.getElementById("season-highlights");
+const seasonYear =
+  document.getElementById("season-eyebrow");
 
+const seasonHeading =
+  document.getElementById("season-heading");
 
-// Update the page when someone chooses a season
+const seasonCopy =
+  document.getElementById("season-copy");
 
-function showSeason(seasonKey) {
-  const season = seasons[seasonKey];
+const seasonChips =
+  document.getElementById("season-chips");
 
-  if (!season) {
-    return;
-  }
+if (
+  seasonButtons.length &&
+  seasonYear &&
+  seasonHeading &&
+  seasonCopy &&
+  seasonChips
+) {
 
-  yearElement.textContent = season.year + " SEASON";
-  titleElement.textContent = season.title;
-  descriptionElement.textContent = season.description;
+  seasonButtons.forEach(button => {
 
-  // Clear the previous season's highlights
-  highlightsElement.replaceChildren();
+    button.addEventListener("click", () => {
 
-  // Add the selected season's highlights
-  season.highlights.forEach(function(highlight) {
-    const tag = document.createElement("span");
-    tag.textContent = highlight;
-    highlightsElement.appendChild(tag);
+      const data = seasonData[button.dataset.season];
+
+      if (!data) return;
+
+      // Update season text
+      seasonYear.textContent = data.year;
+      seasonHeading.textContent = data.title;
+      seasonCopy.textContent = data.copy;
+
+      // Replace highlight tags
+      seasonChips.replaceChildren(
+        ...data.chips.map(label => {
+          const chip = document.createElement("span");
+          chip.textContent = label;
+          return chip;
+        })
+      );
+
+      // Highlight the selected button
+      seasonButtons.forEach(other => {
+
+        const active = other === button;
+
+        other.classList.toggle("active", active);
+
+        other.setAttribute(
+          "aria-pressed",
+          String(active)
+        );
+
+      });
+
+    });
+
   });
 
-  // Update the active button
-  seasonButtons.forEach(function(button) {
-    const isActive = button.dataset.season === seasonKey;
-
-    button.classList.toggle("active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
 }
 
 
-// Listen for button clicks
+/* ==================================
+   MOBILE NAVIGATION
+================================== */
 
-seasonButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    showSeason(button.dataset.season);
+const menuButton =
+  document.querySelector(".menu-toggle");
+
+const menuLinks =
+  document.querySelector(".nav-links");
+
+if (menuButton && menuLinks) {
+
+  menuButton.addEventListener("click", () => {
+
+    const open =
+      menuButton.getAttribute("aria-expanded") !== "true";
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      String(open)
+    );
+
+    menuLinks.classList.toggle("open", open);
+
   });
-});
+
+  // Close menu after clicking a link
+  menuLinks.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      menuLinks.classList.remove("open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    });
+
+  });
+
+}
+
+
+/* ==================================
+   AUTOMATIC COPYRIGHT YEAR
+================================== */
+
+const year = document.getElementById("year");
+
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
