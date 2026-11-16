@@ -1,185 +1,225 @@
 
-/* ==================================
-   MACFE SEASON DATA
-================================== */
+/* ==========================================
+   ARIANNA RAMOTAR — PORTFOLIO JAVASCRIPT
+========================================== */
+
+/* MACFE SEASON DATA */
 
 const seasonData = {
   ev5: {
-    year: "2023–2024 / EV5",
-    title: "Building the foundations",
+    eyebrow: "EV5 / 2023–2024",
+    heading: "Building the foundations.",
     copy:
-      "Business development, team leadership and " +
-      "organizational operations during the EV5 season.",
+      "My first full season as Team Principal brought together organizational leadership and hands-on manufacturing. Alongside budgeting, operations, and design reviews, I assisted with chassis mould manufacturing and contributed to carbon fibre cutting, layup, and infusion.",
     chips: [
-      "Business development",
-      "EV5 season",
-      "Leadership"
-    ]
+      "Team leadership",
+      "Chassis mould manufacturing",
+      "Carbon fibre manufacturing",
+      "Budgeting"
+    ],
+    year: "2023 / 2024",
+    link: "macfe.html#ev5"
   },
 
   ev6: {
-    year: "2024–2025 / EV6",
-    title: "Growing together",
+    eyebrow: "EV6 / 2024–2025",
+    heading: "Strengthening the process.",
     copy:
-      "Team operations, sponsor relationships and " +
-      "organizational development during the EV6 season.",
+      "During EV6, I continued balancing leadership and operational responsibilities with hands-on involvement in chassis manufacturing. I participated in technical design reviews, supported Formula SAE rules compliance, contributed to budgeting, and regularly worked alongside teammates in the shop to help meet project deadlines.",
     chips: [
-      "Sponsorship",
-      "Team development",
-      "EV6 season"
-    ]
+      "Operations",
+      "Design reviews",
+      "Rules compliance",
+      "Chassis manufacturing"
+    ],
+    year: "2024 / 2025",
+    link: "macfe.html#ev6"
   },
 
   ev7: {
-    year: "2025–2026 / EV7",
-    title: "A year of milestones",
+    eyebrow: "EV7 / 2025–2026",
+    heading: "A year of milestones.",
     copy:
-      "Vehicle reveal, Formula SAE Michigan, " +
-      "team growth and leadership transition.",
+      "My final season as Team Principal brought together organizational growth, technical collaboration, and hands-on manufacturing. I continued supporting carbon fibre chassis production, design reviews, and project deadlines while helping deliver our EV7 Reveal, preparing for Formula SAE Michigan, and transitioning leadership to the next team.",
     chips: [
-      "EV7 Reveal",
-      "Competition",
-      "Leadership"
-    ]
+      "181 team members",
+      "55 sponsors",
+      "Chassis manufacturing",
+      "Leadership transition"
+    ],
+    year: "2025 / 2026",
+    link: "macfe.html#ev7"
   },
 
   ev8: {
-    year: "2026–2027 / EV8",
-    title: "A new chapter",
+    eyebrow: "EV8 / 2026–2027",
+    heading: "Continuing the connection.",
     copy:
-      "Continued involvement following my Team " +
-      "Principal tenure, including Women in " +
-      "Motorsports Night and industry outreach.",
+      "After transitioning from Team Principal to General Member in July 2026, I continued contributing through outreach and community engagement. This includes organizing Women in Motorsports Night, bringing together motorsport professionals and students for an evening of conversation, practical advice, and networking.",
     chips: [
       "Women in Motorsports",
-      "Outreach",
-      "Events"
-    ]
+      "Industry outreach",
+      "Community engagement",
+      "General Member"
+    ],
+    year: "2026 / 2027",
+    link: "macfe.html#ev8"
   }
 };
 
 
-/* ==================================
+/* ==========================================
    INTERACTIVE SEASON SELECTOR
-================================== */
+========================================== */
 
-const seasonButtons =
-  document.querySelectorAll("[data-season]");
+const seasonButtons = document.querySelectorAll(
+  "[data-season]"
+);
 
-const seasonYear =
-  document.getElementById("season-eyebrow");
+const seasonEyebrow = document.getElementById(
+  "season-eyebrow"
+);
 
-const seasonHeading =
-  document.getElementById("season-heading");
+const seasonHeading = document.getElementById(
+  "season-heading"
+);
 
-const seasonCopy =
-  document.getElementById("season-copy");
+const seasonCopy = document.getElementById(
+  "season-copy"
+);
 
-const seasonChips =
-  document.getElementById("season-chips");
+const seasonChips = document.getElementById(
+  "season-chips"
+);
 
-if (
-  seasonButtons.length &&
-  seasonYear &&
-  seasonHeading &&
-  seasonCopy &&
-  seasonChips
-) {
+const seasonMore = document.querySelector(
+  ".season-more"
+);
 
-  seasonButtons.forEach(button => {
+const seasonArtTitle = document.querySelector(
+  ".season-art-inner strong"
+);
 
-    button.addEventListener("click", () => {
+const seasonArtYear = document.querySelector(
+  ".season-art-inner small"
+);
 
-      const data = seasonData[button.dataset.season];
 
-      if (!data) return;
+function updateSeason(seasonKey) {
+  const season = seasonData[seasonKey];
 
-      // Update season text
-      seasonYear.textContent = data.year;
-      seasonHeading.textContent = data.title;
-      seasonCopy.textContent = data.copy;
+  if (!season) return;
 
-      // Replace highlight tags
-      seasonChips.replaceChildren(
-        ...data.chips.map(label => {
-          const chip = document.createElement("span");
-          chip.textContent = label;
-          return chip;
-        })
-      );
+  if (seasonEyebrow) {
+    seasonEyebrow.textContent = season.eyebrow;
+  }
 
-      // Highlight the selected button
-      seasonButtons.forEach(other => {
+  if (seasonHeading) {
+    seasonHeading.textContent = season.heading;
+  }
 
-        const active = other === button;
+  if (seasonCopy) {
+    seasonCopy.textContent = season.copy;
+  }
 
-        other.classList.toggle("active", active);
+  if (seasonChips) {
+    seasonChips.replaceChildren();
 
-        other.setAttribute(
-          "aria-pressed",
-          String(active)
-        );
-
-      });
-
+    season.chips.forEach((chip) => {
+      const span = document.createElement("span");
+      span.textContent = chip;
+      seasonChips.appendChild(span);
     });
+  }
 
+  if (seasonMore) {
+    seasonMore.href = season.link;
+  }
+
+  if (seasonArtTitle) {
+    seasonArtTitle.textContent =
+      seasonKey.toUpperCase();
+  }
+
+  if (seasonArtYear) {
+    seasonArtYear.textContent = season.year;
+  }
+
+  seasonButtons.forEach((button) => {
+    const isActive =
+      button.dataset.season === seasonKey;
+
+    button.classList.toggle("active", isActive);
+
+    button.setAttribute(
+      "aria-pressed",
+      String(isActive)
+    );
   });
-
 }
 
 
-/* ==================================
+seasonButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    updateSeason(button.dataset.season);
+  });
+});
+
+
+/* ==========================================
    MOBILE NAVIGATION
-================================== */
+========================================== */
 
-const menuButton =
-  document.querySelector(".menu-toggle");
+const menuToggle = document.querySelector(
+  ".menu-toggle"
+);
 
-const menuLinks =
-  document.querySelector(".nav-links");
+const navLinks = document.querySelector(
+  ".nav-links"
+);
 
-if (menuButton && menuLinks) {
+if (menuToggle && navLinks) {
 
-  menuButton.addEventListener("click", () => {
+  menuToggle.addEventListener("click", () => {
+    const isOpen =
+      navLinks.classList.toggle("open");
 
-    const open =
-      menuButton.getAttribute("aria-expanded") !== "true";
-
-    menuButton.setAttribute(
+    menuToggle.setAttribute(
       "aria-expanded",
-      String(open)
+      String(isOpen)
     );
-
-    menuLinks.classList.toggle("open", open);
-
   });
 
-  // Close menu after clicking a link
-  menuLinks.querySelectorAll("a").forEach(link => {
-
+  navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
 
-      menuLinks.classList.remove("open");
-
-      menuButton.setAttribute(
+      menuToggle.setAttribute(
         "aria-expanded",
         "false"
       );
-
     });
-
   });
 
 }
 
 
-/* ==================================
-   AUTOMATIC COPYRIGHT YEAR
-================================== */
+/* ==========================================
+   AUTOMATIC FOOTER YEAR
+========================================== */
 
-const year = document.getElementById("year");
+const yearElement = document.getElementById("year");
 
-if (year) {
-  year.textContent = new Date().getFullYear();
+if (yearElement) {
+  yearElement.textContent =
+    new Date().getFullYear();
+}
+
+
+/* ==========================================
+   INITIALIZE DEFAULT SEASON
+========================================== */
+
+if (seasonButtons.length > 0) {
+  updateSeason("ev5");
 }
